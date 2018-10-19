@@ -5,7 +5,7 @@ This brief game is a memory game themed after Pokemon. The project is based on t
 ## Getting Started
 
 Play it here on [Heroku](https://pokemon-memory-quiz.herokuapp.com/).
-or 9git clone](https://github.com/Ciwonie/react-memory-game.git) the repository here.
+or [git clone](https://github.com/Ciwonie/react-memory-game.git) the repository here.
 
 
 ## Author
