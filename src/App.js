@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import "./App.css";
 import Card from "./components/Card";
 import Wrapper from "./components/Wrapper";
 import Header from "./components/Header";
 import pokemon from "./pokemon.json";
+// import FooterPage from "./components/Footer";
 
 class App extends Component {
   state = {
@@ -31,10 +32,10 @@ class App extends Component {
       if (o.id === id) {
         if (pokemon[i].count === 0) {
           pokemon[i].count = pokemon[i].count + 1;
-          this.setState({score : this.state.score + 1}, function() {
+          this.setState({ score: this.state.score + 1 }, function() {
             console.log(this.state.score);
           });
-          this.state.pokemon.sort(() => Math.random() - 0.5)
+          this.state.pokemon.sort(() => Math.random() - 0.5);
           return true;
         } else {
           this.gameOver();
@@ -45,17 +46,22 @@ class App extends Component {
 
   render() {
     return (
-      <Wrapper>
-      <Header score={this.state.score} highscore={this.state.highscore}>Pokemon Memory Game</Header>
-      {this.state.pokemon.map(pokemon => (
-        <Card 
-          clickCount={this.clickCount}
-          id={pokemon.id}
-          key={pokemon.id}
-          image={pokemon.image}
-        />
-      ))}
-    </Wrapper>
+      <Fragment>
+        <Wrapper>
+          <Header score={this.state.score} highscore={this.state.highscore}>
+            Pokemon Memory Game
+          </Header>
+          {this.state.pokemon.map(pokemon => (
+            <Card
+              clickCount={this.clickCount}
+              id={pokemon.id}
+              key={pokemon.id}
+              image={pokemon.image}
+            />
+          ))}
+        </Wrapper>
+        {/* <FooterPage /> */}
+      </Fragment>
     );
   }
 }
