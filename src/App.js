@@ -1,3 +1,4 @@
+// Importing Dependencies
 import React, { Component, Fragment } from "react";
 import "./App.css";
 import Card from "./components/Card";
@@ -6,13 +7,17 @@ import Header from "./components/Header";
 import pokemon from "./pokemon.json";
 // import FooterPage from "./components/Footer";
 
+// Main Class Component for the Application
 class App extends Component {
+  
+  // Setting Initial States - pokemon.json and scores need to update over time 
   state = {
     pokemon,
     score: 0,
     highscore: 0
   };
 
+  // This component resets scores, sets highscores, and resets the pokemon count
   gameOver = () => {
     if (this.state.score > this.state.highscore) {
       this.setState({ highscore: this.state.score }, function() {
@@ -27,6 +32,7 @@ class App extends Component {
     return true;
   };
 
+  // This component keeps track of which pokemon were clicked, then randomizes order
   clickCount = id => {
     this.state.pokemon.find((o, i) => {
       if (o.id === id) {
@@ -44,6 +50,7 @@ class App extends Component {
     });
   };
 
+  // render method
   render() {
     return (
       <Fragment>
