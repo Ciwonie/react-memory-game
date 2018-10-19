@@ -11,6 +11,7 @@ This brief game is a memory game themed after Pokemon. The project is based on t
 ## Author
 
 **Jonathan E. Cirone**
+[Portfolio](https://ciwonie.github.io/portfolio-october-update/)
 
 ## License
 
